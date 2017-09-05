@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+		<title>HTML5 form validation</title>
+	</head>
+	
+	<body>
+	
+		<form id="nationality" name="personal" action="serverside.asp">
+		<!--the action attribute is used to reference the server side script that will send the form data to this script typically for database storage or to send to a particular destination. In this example, we are going to bypass this script by disabling the submit button from reaching this server side script.-->
+		
+			<h2>Text inputs</h2>
+			<div>
+				<input type='text' size='20' name='name' autofocus placeholder="your name" required>
+				<input type='text' size='20' name='address' >
+				<input type='text' size='20' name='city'>
+			</div>
+			
+			
+			<div>
+				<h2>Select Box Inputs</h2>
+				<select id="s-county">
+					<option value>select </option>
+					<option value="YOR">Yorkshire </option>
+					<option value="SUS">Sussex</option>
+					<option value="SUR">Surrey</option>
+					<option value="DOR">Dorset</option>
+				</select>
+			</div>
+			
+			<div>
+			<h2>Radio Input types</h2>
+				<h4>Shipping Methods:</h4>
+				
+				<input type="radio" value="pickup" name="r_method" id="r-method-pickup" checked />
+				<!--Make sure that you place a 'for' attribute value on the label tag and that this value matches the id value assigned to the input type you're trying to relate this label to. In HTML5, you can use boolean attribute values to assign a certain state to a tag.-->
+				<label for="r-method-pickup">Pickup Free:</label> <br />
+				
+				
+				<input type="radio" value="usps" name="r_method" id="r-method-usps" />
+				<label for="r-method-usps">Royal Mail (£2/bottle)</label>  <br />
+				
+				
+				<input type="radio" value="ups" name="r_method" id="r-method-ups" />
+				<label for="r-method-ups">UPS</label> 
+			</div>
+			
+			<div>
+				<h2>Checkbox Inputs</h2>
+				<h4>Special bottling:</h4>
+				<input type="checkbox" name="c_special" value="Special Gift" id="c-special-gift"/>
+				<label for="c-special-gift">This is a gift</label><br />
+				
+				
+				<input type="checkbox" name="c_special" value="Special Bottles"  id="c-special-bottles"/>
+				<label for="c-special-bottles">Use gold-flecked bottles</label><br />
+				
+				
+				<input type="checkbox" name="c_special" value="Special Caps" id="c-special-caps"/>
+				<label for="c-special-caps">Use plastic caps instead of cork</label>
+				
+			</div>
+			<div>
+			<h2>Sliced</h2>
+				<span>&pound;</span><input type="text" name="sliced"  size="20"/>
+			
+			</div>
+			<br />
+			
+		
+			<input type="submit" />
+		
+		</form>
+		<div><p>Text Results: <span id="textResults"></span></p></div>
+		<div><p>Select Results:<span id="selectResults"></span></p></div>
+		<div><p>Radio Results:<span id="radioResults"></span></p></div>
+		<div><p>Checkbox Results:<span id="checkboxResults"></span></p></div>
+		<div><p>Sliced Results:<span id="slicedResults"></span></p></div>
+		<script src="forms.js"></script>
+	</body>
+
+</html>
